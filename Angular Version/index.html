@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Firebase-Commentify</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="main.css" />
+	
+	
+	<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="homeController" class="container-fluid">
+	
+	
+		<body data-ix="new-interaction">
+		  <div class="comment-background container">
+			<div>
+			  <h4 class="comment-headline">Comments</h4>
+			  <div class="w-form">
+				<form>
+				  <div class="comment-form w-clearfix">
+					<div class="w-row">
+					  <div class="w-col w-col-6 form-group">
+						<label for="commentName">Name</label>
+						<input id="commentName" class="form-control" ng-model="comment.name" placeholder="Optional" type="text" />
+					  </div>
+					  <div class="w-col w-col-6 form-group">
+						<label for="commentEmail">Email Id</label>
+						<input id="commentEmail" class="form-control" ng-model="comment.email" placeholder="Optional" type="text" />
+					  </div>
+					</div>
+					<label for="commentText">Comment</label>
+					<textarea id="commentText" class="comment-textarea form-control" ng-model="comment.text" placeholder="Your comment" rows="3"></textarea>
+					<button type="button" class="comment-submit btn btn-primary" ng-click="SubmitComment()" >Submit</button>
+				  </div>
+				</form>
+			  </div>
+			</div>
+			<div>
+			  <h4 class="comment-headline">{{comments.length}} COMMENTS</h4>
+			  <div class="comment-break w-embed">
+				<hr>
+			  </div>
+			</div>
+			<div>
+			  <div ng-repeat="(key,comment) in comments">
+				<h5 class="comment-content">{{comment.name}}</h5>
+				<p class="comment-content">{{comment.text}}</p>
+				<a href="#reply" class="comment-content" ng-click="replyshow=true" >Reply</a>
+				<div class="comment-break w-embed">
+				  <hr>
+				</div>
+
+				<div class="comment-content2" ng-repeat="reply in comment.replies track by $index">
+				  <h5 class="comment-content">{{reply.name}}</h5>
+				  <p class="comment-content">{{reply.text}}</p>
+				  <a class="comment-content" href="#" ng-click="replyshow=true" >Reply</a>
+				  <div class="comment-break w-embed">
+					<hr>
+				  </div>
+				</div>
+
+				<div id="reply" class="comment-content2" ng-show='replyshow'>
+				  <div class="comment-reply w-form">
+					<form>
+					  <div class="comment-form w-clearfix">
+						<div class="w-row">
+						  <div class="w-col w-col-6 form-group">
+							<label for="commentName">Name</label>
+							<input id="commentName" class="form-control" ng-model="reply.name" placeholder="Optional" type="text" />
+						  </div>
+						  <div class="w-col w-col-6 form-group">
+							<label for="commentEmail">Email Id</label>
+							<input id="commentEmail" class="form-control" ng-model="reply.email" placeholder="Optional" type="text" />
+						  </div>
+						</div>
+						<label for="commentText">File input</label>
+						<textarea id="commentText" class="comment-textarea form-control" ng-model="reply.text" placeholder="Your comment" rows="3"></textarea>
+						<button type="button" class="comment-submit btn btn-primary" ng-click="ReplyComment(key,reply)" >Submit</button>
+						<button type="button" class="comment-submit btn btn-default" ng-click="replyshow=false" >Cancel</button>
+						<div class="comment-break w-embed">
+							<hr>
+						</div>
+						
+					  </div>
+					</form>
+
+				  </div>
+				</div>
+			  </div>
+
+			</div>
+		  </div>
+		</body>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+	
+</body>

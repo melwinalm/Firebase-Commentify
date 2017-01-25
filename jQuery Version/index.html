@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Firebase-Commentify (jQuery Version)</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="main.css" />
+	
+	<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+
+	<div class="container-fluid">
+	
+	
+		<body data-ix="new-interaction">
+		  <div class="comment-background container">
+			<div>
+			  <h4 class="comment-headline">Comments</h4>
+			  <div class="w-form">
+				
+				  <div class="comment-form w-clearfix">
+					<div class="w-row">
+					  <div class="w-col w-col-6 form-group">
+						<label for="commentName">Name</label>
+						<input class="form-control" id="comment_name" placeholder="Optional" type="text" />
+					  </div>
+					  <div class="w-col w-col-6 form-group">
+						<label for="commentEmail">Email Id</label>
+						<input class="form-control" id="comment_email" placeholder="Optional" type="text" />
+					  </div>
+					</div>
+					<label for="commentText">Comment</label>
+					<textarea class="comment-textarea form-control" id="comment_text" placeholder="Your comment" rows="3"></textarea>
+					<button type="button" class="comment-submit btn btn-primary" onclick="SubmitComment()" >Submit</button>
+				  </div>
+				
+			  </div>
+			</div>
+			<div>
+			  <h4 id="commentcount" class="comment-headline">COMMENTS</h4>
+			  <div class="comment-break w-embed">
+				<hr>
+			  </div>
+			</div>
+			<div id="allcomments">
+			
+
+			</div>
+		  </div>
+		</body>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+	
+</body>
